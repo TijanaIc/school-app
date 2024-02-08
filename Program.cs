@@ -6,3 +6,5 @@ new PinCode().TryPin();
 
 // Agent 
 new SimpleAgent().TryAgent();
+
+DateOfBirth.GetDateOfBirth();

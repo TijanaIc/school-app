@@ -1,4 +1,6 @@
-﻿namespace SchoolApp;
+﻿using System.Xml.Linq;
+
+namespace SchoolApp;
 
 public class SimpleAgent
 {
@@ -15,12 +17,11 @@ public class SimpleAgent
     private string oldAge = "Trebalo bi da razmisljas o usavrsavanju na poslu....";
     private string tooOldAge = "Trebalo bi da razmisljas o penzionisanju....";
 
-
     public void TryAgent()
     {
         GetName();
-        GetYearsOld();
-
+        //GetYearsOld(ime);
+        GetYearsOldSwitch();
     }
 
     public void GetName()
@@ -35,7 +36,7 @@ public class SimpleAgent
         Console.WriteLine(hello + " " + name);
     }
 
-    public void GetYearsOld()
+    public void GetYearsOldSwitch()
     {
         Console.WriteLine("");
         Console.WriteLine(askYears);
@@ -64,5 +65,24 @@ public class SimpleAgent
                 break;
         }
 
+    }
+
+    public void GetYearsOld(string name)
+    {
+        Console.WriteLine("");
+        Console.WriteLine(askYears + " " + name);
+        var yearsOld = int.Parse(Console.ReadLine());
+
+        if (yearsOld <= 18)
+            Console.WriteLine(tooYung);
+
+        if (yearsOld > 18 && yearsOld <= 25)
+            Console.WriteLine(midAge);
+
+        if (yearsOld > 25 && yearsOld <= 63)
+            Console.WriteLine(oldAge);
+
+        if (yearsOld > 63)
+            Console.WriteLine(tooOldAge);
     }
 }

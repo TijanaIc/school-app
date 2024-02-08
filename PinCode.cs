@@ -2,7 +2,6 @@
 
 public class PinCode
 {
-
     #region Parameters
 
     //parameters
@@ -12,7 +11,6 @@ public class PinCode
     const int pin = 1111;
 
     #endregion
-
 
     #region Text Messages
 
@@ -24,9 +22,7 @@ public class PinCode
     string blankPin = "Morate uneti pin";
     private string retryMessage = "Preostali broj pokusaja";
 
-
     #endregion
-
 
     public void TryPin()
     {
